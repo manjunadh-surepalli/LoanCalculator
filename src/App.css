@@ -4,8 +4,9 @@
 #menu-display{
     display: block;
    }
-@media (prefers-reduced-motion: no-preference) {
- 
+#link{
+    text-decoration: none;
+    color: white;
 }
 @media screen and (max-width: 700px) {
    #menuicon{
@@ -14,7 +15,14 @@
    #menu-display{
     display: none;
    }
+   #link{
+    text-decoration: none;
+    color: black;
+   }
    #switch{
     margin-left: 200px;
+   }
+   Link{
+    text-decoration: none;
    }
   }

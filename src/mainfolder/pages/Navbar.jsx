@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Outlet, Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import { Toolbar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
@@ -18,17 +19,18 @@ import Drawer from '@mui/material/Drawer';
 import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
 function Navbar() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = React.useState(false);
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
       };
+
     
       const DrawerList = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 250 }} role="presentation">
       <AppBar position='static'>
      <Toolbar variant="dense">
-      <Typography variant="h6" color="inherit" component="div">
-       Home
+      <Typography variant="h6" color="inherit" component="div"  role="presentation"onClick={toggleDrawer(false)}>
+      HOME
       </Typography>
       </Toolbar>
     </AppBar>
@@ -36,13 +38,19 @@ function Navbar() {
               <ListItem >
               <Stack direction="column" spacing={2}>
                <ListItemButton>
-                  <ListItemText >Exchange Rates (Live)</ListItemText>
+                  <ListItemText >
+                  <Link to="/exchange" id='link'>Exchange Rates(Live)</Link>
+                  </ListItemText>
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemText>About</ListItemText>
+                  <ListItemText>
+                  <Link to="/about" id='link'>ABOUT</Link>
+                  </ListItemText>
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemText>Error Page</ListItemText>
+                  <ListItemText>
+                  <Link to="/errorpage" id='link'>ERROR PAGE</Link>
+                  </ListItemText>
                 </ListItemButton>
              </Stack>
               </ListItem>
@@ -56,10 +64,10 @@ function Navbar() {
       <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
       <Typography onClick={toggleDrawer(true)}>
         <MenuIcon/>
+        </Typography>
       <Drawer open={open} onClose={toggleDrawer(false)}>
-        {DrawerList}
+        { DrawerList}
       </Drawer>
-      </Typography>
       </IconButton>
       </div>
       <Typography variant="h6" color="inherit" component="div" sx={{mr:12}}>
@@ -67,16 +75,25 @@ function Navbar() {
       </Typography>
          <div id='menu-display'>
          <Stack direction="row" spacing={2} sx={{ml:50,mr:3}}>
-         <Button color="inherit">HOME</Button>
-         <Button color="inherit">EXCHNAGE RATES(LIVE)</Button>
-         <Button color="inherit">ABOUT</Button>
-         <Button color="inherit">ERROR PAGE</Button>
+         <Button color="inherit">
+         <Link to="/" id='link'>HOME</Link>
+         </Button>
+         <Button color="inherit">
+          <Link to="/exchange" id='link'>EXCHNAGE RATES(LIVE)</Link>
+         </Button>
+         <Button color="inherit">
+          <Link to="/about" id='link'>ABOUT</Link>
+         </Button>
+         <Button color="inherit">
+          <Link to="/errorpage" id='link'>ERROR PAGE</Link>
+         </Button>
          </Stack>
          </div>
         <div>
         <Switch/>
         </div>
         </Toolbar>
+        <Outlet/>
     </AppBar>
   )
 }
