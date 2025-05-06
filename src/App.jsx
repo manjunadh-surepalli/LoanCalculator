@@ -16,6 +16,7 @@ function App() {
       <Route path='/exchange' element={<Exchangesrates/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/errorpage' element={<Errorpage/>}/>
+      <Route path='*' element={<h1 style={{color:"red"}}>404 Not Found</h1>}/>
     </Routes>
    </BrowserRouter>
     </>

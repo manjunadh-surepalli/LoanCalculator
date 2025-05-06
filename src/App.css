@@ -8,12 +8,31 @@
     text-decoration: none;
     color: white;
 }
+#error-display{
+     text-align: center;
+     margin-top: 250px;
+     font-weight: 200px;
+}
+#error-display>button{
+    color: blue;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid blue;
+    margin-top: 15px;
+}
+#link2{
+    text-decoration: none;
+}
 @media screen and (max-width: 700px) {
    #menuicon{
     display: block;
    }
    #menu-display{
     display: none;
+   }
+   #link1{
+    text-decoration: none;
+    color: white;
    }
    #link{
     text-decoration: none;

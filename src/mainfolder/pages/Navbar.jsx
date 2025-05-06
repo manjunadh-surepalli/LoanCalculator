@@ -30,7 +30,7 @@ function Navbar() {
       <AppBar position='static'>
      <Toolbar variant="dense">
       <Typography variant="h6" color="inherit" component="div"  role="presentation"onClick={toggleDrawer(false)}>
-      HOME
+      <Link to="/" id='link1'>Home</Link>
       </Typography>
       </Toolbar>
     </AppBar>
@@ -44,12 +44,12 @@ function Navbar() {
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemText>
-                  <Link to="/about" id='link'>ABOUT</Link>
+                  <Link to="/about" id='link'>About</Link>
                   </ListItemText>
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemText>
-                  <Link to="/errorpage" id='link'>ERROR PAGE</Link>
+                  <Link to="/errorpage" id='link'>Error page</Link>
                   </ListItemText>
                 </ListItemButton>
              </Stack>
