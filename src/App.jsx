@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import Landingpage from './mainfolder/pages/Landingpage'
 
 function App() {
 
   return (
     <>
-     <div>manju</div>
+    <Landingpage/>
+    
     </>
   )
 }
